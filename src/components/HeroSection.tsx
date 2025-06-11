@@ -11,8 +11,8 @@ const HeroSection = () => {
       alt: '현대적인 치과 진료실'
     },
     {
-      image: '/lovable-uploads/ad1d528e-41a2-4ff4-b97e-a08d509a8a10.png',
-      alt: '치과 의사가 태블릿을 사용하는 모습'
+      image: '/lovable-uploads/doctor-consultation.png',
+      alt: '치과 의사가 진료하는 모습'
     },
     {
       image: '/lovable-uploads/709a9408-cb20-4564-b2c9-3b5f957e1fa6.png',

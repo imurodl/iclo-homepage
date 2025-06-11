@@ -33,8 +33,7 @@ const FeaturesSection = () => {
       icon: "👨‍⚕️",
       title: "전문의 사진상담",
       description: "전문의가 사진을 통해 정확한 진단과 상담을 제공합니다",
-      image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/lovable-uploads/doctor-consultation.png",
     },
     {
       icon: "📰",
@@ -71,8 +70,7 @@ const FeaturesSection = () => {
       icon: "💻",
       title: "디지털화 된 진단, 상담",
       description: "모든 진료 과정이 디지털로 체계화되어 관리됩니다",
-      image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/lovable-uploads/doctor-consultation.png",
     },
     {
       icon: "⚙️",

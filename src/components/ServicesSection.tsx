@@ -34,7 +34,7 @@ const ServicesSection = () => {
       subtitle: '스마트 구강검진 & 진료관리',
       description: '디지털 진료 프로세스로 효율적인 환자관리',
       icon: '📋',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/lovable-uploads/doctor-consultation.png'
     }
   ];
 

@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       content: 'HomeDen Connect로 환자 관리가 정말 쉬워졌습니다. 예약부터 진료 후 관리까지 모든 과정이 체계적으로 관리되어 환자 만족도가 크게 높아졌어요.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      bgImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+      bgImage: '/lovable-uploads/doctor-consultation.png'
     }
   ];
 

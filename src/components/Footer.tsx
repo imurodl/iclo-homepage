@@ -97,31 +97,6 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            
-            {/* Social Media */}
-            <div className="mt-6">
-              <div className="font-semibold mb-3">소셜 미디어</div>
-              <div className="flex space-x-4">
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-homeden-red transition-colors"
-                >
-                  <span className="text-xl">📘</span>
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-homeden-red transition-colors"
-                >
-                  <span className="text-xl">📷</span>
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-homeden-red transition-colors"
-                >
-                  <span className="text-xl">🐦</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 

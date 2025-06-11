@@ -7,15 +7,15 @@ const HeroSection = () => {
   
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3',
+      image: '/lovable-uploads/1.png',
       alt: '현대적인 치과 진료실'
     },
     {
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3',
+      image: '/lovable-uploads/ad1d528e-41a2-4ff4-b97e-a08d509a8a10.png',
       alt: '치과 의사가 태블릿을 사용하는 모습'
     },
     {
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3',
+      image: '/lovable-uploads/709a9408-cb20-4564-b2c9-3b5f957e1fa6.png',
       alt: '환자가 노트북으로 상담받는 모습'
     }
   ];

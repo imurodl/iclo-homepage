@@ -35,10 +35,16 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-homeden-red rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">H</span>
-            </div>
-            <span className="text-2xl font-bold text-homeden-navy">HomeDen</span>
+            <img 
+              src="/lovable-uploads/709a9408-cb20-4564-b2c9-3b5f957e1fa6.png" 
+              alt="HomeDen Logo" 
+              className="w-10 h-10"
+            />
+            <img 
+              src="/lovable-uploads/0cec2142-b651-40e4-941e-053470ab5171.png" 
+              alt="HomeDen" 
+              className="h-8"
+            />
           </div>
 
           {/* Desktop Navigation */}

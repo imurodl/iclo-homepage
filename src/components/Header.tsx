@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +19,28 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If we're already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    scrollToSection('contact');
   };
 
   return (
@@ -36,11 +55,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Company Logo */}
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/01473896-4cae-499b-ac73-6a1092781d59.png" 
-              alt="Company Logo" 
-              className="h-8"
-            />
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/01473896-4cae-499b-ac73-6a1092781d59.png" 
+                alt="Company Logo" 
+                className="h-8"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -86,7 +107,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button 
-              onClick={() => scrollToSection('contact')}
+              onClick={handleContactClick}
               className="bg-homeden-red hover:bg-homeden-red-light text-white px-6 py-2 font-semibold shadow-lg"
             >
               무료 데모 신청
@@ -149,7 +170,7 @@ const Header = () => {
               </button>
               <div className="px-4 pt-2">
                 <Button 
-                  onClick={() => scrollToSection('contact')}
+                  onClick={handleContactClick}
                   className="w-full bg-homeden-red hover:bg-homeden-red-light text-white font-semibold"
                 >
                   무료 데모 신청

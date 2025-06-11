@@ -33,17 +33,12 @@ const Header = () => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
+          {/* Company Logo */}
+          <div className="flex items-center">
             <img 
-              src="/lovable-uploads/709a9408-cb20-4564-b2c9-3b5f957e1fa6.png" 
-              alt="HomeDen Logo" 
-              className="w-10 h-10"
-            />
-            <img 
-              src="/lovable-uploads/0cec2142-b651-40e4-941e-053470ab5171.png" 
-              alt="HomeDen" 
-              className="h-8"
+              src="/lovable-uploads/01473896-4cae-499b-ac73-6a1092781d59.png" 
+              alt="Company Logo" 
+              className="h-10"
             />
           </div>
 

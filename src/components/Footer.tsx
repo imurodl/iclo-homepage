@@ -125,7 +125,7 @@ const Footer = () => {
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
               © {currentYear} ICLO. All Rights Reserved.
             </div>
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 개인정보처리방침
               </a>
@@ -135,7 +135,7 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 쿠키 정책
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

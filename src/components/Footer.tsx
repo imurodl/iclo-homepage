@@ -11,10 +11,18 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-homeden-red rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">H</span>
+              <div className="w-10 h-10 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/ad1d528e-41a2-4ff4-b97e-a08d509a8a10.png" 
+                  alt="HomeDen Logo" 
+                  className="w-10 h-10"
+                />
               </div>
-              <span className="text-2xl font-bold">HomeDen</span>
+              <img 
+                src="/lovable-uploads/89c4be31-d468-439e-ae57-e3642d2c8d47.png" 
+                alt="HomeDen" 
+                className="h-8"
+              />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               AI 기술과 통합 CRM으로 치과 업무의 혁신을 이끄는<br />

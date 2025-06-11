@@ -28,7 +28,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
+          : 'bg-white/90 backdrop-blur-sm shadow-md'
       }`}
     >
       <div className="container-custom">
@@ -51,31 +51,31 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-gray-700 hover:text-homeden-red transition-colors font-medium"
+              className="text-homeden-navy hover:text-homeden-red transition-colors font-semibold text-shadow-sm"
             >
               서비스 소개
             </button>
             <button 
               onClick={() => scrollToSection('features')}
-              className="text-gray-700 hover:text-homeden-red transition-colors font-medium"
+              className="text-homeden-navy hover:text-homeden-red transition-colors font-semibold text-shadow-sm"
             >
               기능
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
-              className="text-gray-700 hover:text-homeden-red transition-colors font-medium"
+              className="text-homeden-navy hover:text-homeden-red transition-colors font-semibold text-shadow-sm"
             >
               가격
             </button>
             <button 
               onClick={() => scrollToSection('testimonials')}
-              className="text-gray-700 hover:text-homeden-red transition-colors font-medium"
+              className="text-homeden-navy hover:text-homeden-red transition-colors font-semibold text-shadow-sm"
             >
               고객 후기
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-gray-700 hover:text-homeden-red transition-colors font-medium"
+              className="text-homeden-navy hover:text-homeden-red transition-colors font-semibold text-shadow-sm"
             >
               문의
             </button>
@@ -85,7 +85,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-homeden-red hover:bg-homeden-red-light text-white px-6 py-2"
+              className="bg-homeden-red hover:bg-homeden-red-light text-white px-6 py-2 font-semibold shadow-lg"
             >
               무료 데모 신청
             </Button>
@@ -106,42 +106,42 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-200 py-4">
+          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 py-4 shadow-lg">
             <nav className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('services')}
-                className="text-left text-gray-700 hover:text-homeden-red transition-colors font-medium px-4 py-2"
+                className="text-left text-homeden-navy hover:text-homeden-red transition-colors font-semibold px-4 py-2"
               >
                 서비스 소개
               </button>
               <button 
                 onClick={() => scrollToSection('features')}
-                className="text-left text-gray-700 hover:text-homeden-red transition-colors font-medium px-4 py-2"
+                className="text-left text-homeden-navy hover:text-homeden-red transition-colors font-semibold px-4 py-2"
               >
                 기능
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
-                className="text-left text-gray-700 hover:text-homeden-red transition-colors font-medium px-4 py-2"
+                className="text-left text-homeden-navy hover:text-homeden-red transition-colors font-semibold px-4 py-2"
               >
                 가격
               </button>
               <button 
                 onClick={() => scrollToSection('testimonials')}
-                className="text-left text-gray-700 hover:text-homeden-red transition-colors font-medium px-4 py-2"
+                className="text-left text-homeden-navy hover:text-homeden-red transition-colors font-semibold px-4 py-2"
               >
                 고객 후기
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-left text-gray-700 hover:text-homeden-red transition-colors font-medium px-4 py-2"
+                className="text-left text-homeden-navy hover:text-homeden-red transition-colors font-semibold px-4 py-2"
               >
                 문의
               </button>
               <div className="px-4 pt-2">
                 <Button 
                   onClick={() => scrollToSection('contact')}
-                  className="w-full bg-homeden-red hover:bg-homeden-red-light text-white"
+                  className="w-full bg-homeden-red hover:bg-homeden-red-light text-white font-semibold"
                 >
                   무료 데모 신청
                 </Button>

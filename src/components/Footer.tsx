@@ -1,8 +1,27 @@
 
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  const isAboutPage = location.pathname === '/about';
+  
+  const handleNavigateToSection = (sectionId: string) => {
+    if (isAboutPage) {
+      // About 페이지에서는 홈으로 이동한 후 해당 섹션으로 스크롤
+      navigate('/');
+      // 페이지 이동 후 스크롤하기 위해 setTimeout 사용
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      // 홈 페이지에서는 바로 스크롤
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-homeden-navy text-white">
@@ -41,7 +60,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <button 
-                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => handleNavigateToSection('services')}
                   className="text-gray-300 hover:text-homeden-red-light transition-colors"
                 >
                   서비스 소개
@@ -49,7 +68,7 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => handleNavigateToSection('features')}
                   className="text-gray-300 hover:text-homeden-red-light transition-colors"
                 >
                   주요 기능
@@ -57,7 +76,7 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => handleNavigateToSection('pricing')}
                   className="text-gray-300 hover:text-homeden-red-light transition-colors"
                 >
                   가격 안내
@@ -65,7 +84,7 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => handleNavigateToSection('contact')}
                   className="text-gray-300 hover:text-homeden-red-light transition-colors"
                 >
                   문의하기

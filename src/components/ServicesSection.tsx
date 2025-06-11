@@ -35,20 +35,6 @@ const ServicesSection = () => {
       description: '예약, 상담, 결제, 차팅, 리마인더까지 모든 업무를 하나의 플랫폼에서 관리하세요.',
       icon: '🔗',
       features: ['통합 예약 관리', '온라인 상담', '자동 결제', '스마트 차팅']
-    },
-    {
-      title: '실시간 대시보드',
-      subtitle: '환자 상태 한눈에 파악',
-      description: '환자의 치료 진행 상황과 리콜 현황을 실시간으로 모니터링하고 관리하세요.',
-      icon: '📊',
-      features: ['실시간 모니터링', '리콜 관리', '치료 진행률', '통계 분석']
-    },
-    {
-      title: '데이터 보안',
-      subtitle: 'GDPR·HIPAA 수준 보안',
-      description: '국제 표준 수준의 강화된 보안 시스템으로 환자의 개인정보를 안전하게 보호합니다.',
-      icon: '🛡️',
-      features: ['암호화 저장', '접근 권한 관리', '보안 감사', '규정 준수']
     }
   ];
 
@@ -65,7 +51,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index} 

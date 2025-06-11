@@ -28,15 +28,22 @@ const ServicesSection = () => {
       description: 'AI 셀프 구강체크로 언제든지 내 치아 상태를 확인하고, 전문의 사진상담을 통해 정확한 진단을 받아보세요.',
       icon: '🔬',
       image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      features: ['AI 셀프 구강체크', '전문의 사진상담', '치과정보 매거진', '단골병원 연결']
+      features: ['AI 셀프 구강체크', '전문의 사진상담', '매거진 (치과정보)', '단골병원 연결']
     },
     {
       title: 'HomeDen Connect',
       subtitle: '스마트 구강검진 & 진료관리',
-      description: '스마트 구강검진부터 나의 검진·진료 내역 확인, 진단서 등 각종 서류 발급까지 모든 서비스를 한 곳에서.',
+      description: '전자문진부터 AI진단보조, 개인 맞춤형 CRM까지 디지털화된 진료 프로세스로 효율적인 환자관리를 실현합니다.',
       icon: '📋',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      features: ['스마트 구강검진', '나의 검진·진료 내역', '진단서 발급', '각종 서류 관리']
+      features: [
+        '전자문진',
+        'AI진단보조', 
+        '디지털화 된 진단, 상담',
+        '환자관리 프로세스',
+        '개인 맞춤형 CRM',
+        '단골과의 소통 (질문답변, 결과전송, 진료계약, 다음진료안내, 각종 서류 온라인 발급)'
+      ]
     }
   ];
 
@@ -82,8 +89,8 @@ const ServicesSection = () => {
                 </p>
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
-                      <span className="w-2 h-2 bg-homeden-red rounded-full mr-4 flex-shrink-0"></span>
+                    <li key={featureIndex} className="flex items-start text-gray-700">
+                      <span className="w-2 h-2 bg-homeden-red rounded-full mr-4 flex-shrink-0 mt-2"></span>
                       <span className="font-medium">{feature}</span>
                     </li>
                   ))}
@@ -122,22 +129,22 @@ const ServicesSection = () => {
             <div className="relative group cursor-pointer">
               <img 
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="진료 내역 관리"
+                alt="전자문진 & AI진단"
                 className="w-full h-48 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-homeden-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                <p className="text-white font-semibold text-lg">진료 내역 관리</p>
+                <p className="text-white font-semibold text-lg">전자문진 & AI진단</p>
               </div>
             </div>
 
             <div className="relative group cursor-pointer">
               <img 
                 src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="서류 발급"
+                alt="개인 맞춤형 CRM"
                 className="w-full h-48 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-homeden-navy/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                <p className="text-white font-semibold text-lg">서류 발급</p>
+                <p className="text-white font-semibold text-lg">개인 맞춤형 CRM</p>
               </div>
             </div>
           </div>

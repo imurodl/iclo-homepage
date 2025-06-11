@@ -45,6 +45,12 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <button 
+              onClick={() => scrollToSection('about')}
+              className="text-homeden-navy hover:text-homeden-red transition-colors font-semibold text-shadow-sm"
+            >
+              회사소개
+            </button>
+            <button 
               onClick={() => scrollToSection('services')}
               className="text-homeden-navy hover:text-homeden-red transition-colors font-semibold text-shadow-sm"
             >
@@ -103,6 +109,12 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 py-4 shadow-lg">
             <nav className="flex flex-col space-y-4">
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="text-left text-homeden-navy hover:text-homeden-red transition-colors font-semibold px-4 py-2"
+              >
+                회사소개
+              </button>
               <button 
                 onClick={() => scrollToSection('services')}
                 className="text-left text-homeden-navy hover:text-homeden-red transition-colors font-semibold px-4 py-2"

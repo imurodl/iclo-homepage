@@ -11,21 +11,24 @@ const TestimonialsSection = () => {
       position: '서울대치과의원 대표원장',
       content: 'HomeDen의 AI 분석 기능 덕분에 환자들의 구강 상태를 더 정확하게 파악할 수 있게 되었습니다. 진료 효율성이 30% 이상 향상되었어요.',
       rating: 5,
-      image: '👨‍⚕️'
+      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      bgImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
     },
     {
       name: '이수진 환자',
       position: '직장인, 32세',
       content: '집에서 간편하게 구강 검진을 받을 수 있어서 정말 편리해요. 바쁜 일상 속에서도 내 치아 건강을 체크할 수 있어 안심됩니다.',
       rating: 5,
-      image: '👩‍💼'
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      bgImage: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
     },
     {
       name: '박재현 원장',
       position: '강남스마일치과 원장',
       content: 'HomeDen Connect로 환자 관리가 정말 쉬워졌습니다. 예약부터 진료 후 관리까지 모든 과정이 체계적으로 관리되어 환자 만족도가 크게 높아졌어요.',
       rating: 5,
-      image: '👨‍⚕️'
+      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      bgImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
     }
   ];
 
@@ -56,8 +59,18 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="section-padding bg-gray-50">
-      <div className="container-custom">
+    <section id="testimonials" className="section-padding relative overflow-hidden">
+      {/* 배경 이미지 */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={testimonials[currentTestimonial].bgImage}
+          alt="Background"
+          className="w-full h-full object-cover transition-opacity duration-1000"
+        />
+        <div className="absolute inset-0 bg-white/95"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold text-homeden-navy mb-4">
             고객 후기
@@ -67,7 +80,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="relative overflow-hidden">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
@@ -75,23 +88,36 @@ const TestimonialsSection = () => {
             >
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="w-full flex-shrink-0">
-                  <Card className="mx-4 border-0 shadow-xl">
-                    <CardContent className="p-8 text-center">
-                      <div className="text-6xl mb-6">{testimonial.image}</div>
-                      <div className="flex justify-center mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <span key={i} className="text-yellow-400 text-xl">⭐</span>
-                        ))}
-                      </div>
-                      <blockquote className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed italic">
-                        "{testimonial.content}"
-                      </blockquote>
-                      <div>
-                        <div className="font-bold text-homeden-navy text-lg">
-                          {testimonial.name}
+                  <Card className="mx-4 border-0 shadow-2xl bg-white/95 backdrop-blur-sm">
+                    <CardContent className="p-8">
+                      <div className="flex flex-col md:flex-row items-center gap-8">
+                        {/* 프로필 이미지 */}
+                        <div className="flex-shrink-0">
+                          <img 
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shadow-lg border-4 border-white"
+                          />
                         </div>
-                        <div className="text-gray-600">
-                          {testimonial.position}
+                        
+                        {/* 후기 내용 */}
+                        <div className="flex-1 text-center md:text-left">
+                          <div className="flex justify-center md:justify-start mb-4">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <span key={i} className="text-yellow-400 text-xl">⭐</span>
+                            ))}
+                          </div>
+                          <blockquote className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed italic">
+                            "{testimonial.content}"
+                          </blockquote>
+                          <div>
+                            <div className="font-bold text-homeden-navy text-xl">
+                              {testimonial.name}
+                            </div>
+                            <div className="text-gray-600 text-lg">
+                              {testimonial.position}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </CardContent>

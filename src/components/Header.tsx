@@ -38,7 +38,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/01473896-4cae-499b-ac73-6a1092781d59.png" 
               alt="Company Logo" 
-              className="h-10"
+              className="h-8"
             />
           </div>
 

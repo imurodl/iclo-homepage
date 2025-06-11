@@ -192,7 +192,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">이메일</div>
-                      <div className="text-gray-600">contact@homeden.co.kr</div>
+                      <div className="text-gray-600">info@iclocorp.com</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -201,7 +201,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">대표번호</div>
-                      <div className="text-gray-600">02-1234-5678</div>
+                      <div className="text-gray-600">070-4147-2804</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -210,7 +210,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">주소</div>
-                      <div className="text-gray-600">서울특별시 강남구<br />테헤란로 123, 홈덴빌딩 10층</div>
+                      <div className="text-gray-600">제주특별자치도 제주시<br />중앙로 14길 21</div>
                     </div>
                   </div>
                 </div>

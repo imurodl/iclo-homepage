@@ -29,9 +29,9 @@ const Footer = () => {
               HomeDen과 함께 더 나은 구강 건강 관리의 미래를 만들어가세요.
             </p>
             <div className="space-y-2 text-gray-300">
-              <div><strong>iCLO 주식회사</strong></div>
-              <div>서울특별시 강남구 테헤란로 123, 홈덴빌딩 10층</div>
-              <div>사업자등록번호: 123-45-67890</div>
+              <div><strong>주식회사 아이클로</strong></div>
+              <div>제주특별자치도 제주시 중앙로 14길 21</div>
+              <div>사업자등록번호: 423-88-01350</div>
             </div>
           </div>
 
@@ -81,19 +81,19 @@ const Footer = () => {
               <div>
                 <div className="font-semibold">이메일</div>
                 <a 
-                  href="mailto:contact@homeden.co.kr" 
+                  href="mailto:info@iclocorp.com" 
                   className="hover:text-homeden-red-light transition-colors"
                 >
-                  contact@homeden.co.kr
+                  info@iclocorp.com
                 </a>
               </div>
               <div>
                 <div className="font-semibold">대표번호</div>
                 <a 
-                  href="tel:02-1234-5678" 
+                  href="tel:070-4147-2804" 
                   className="hover:text-homeden-red-light transition-colors"
                 >
-                  02-1234-5678
+                  070-4147-2804
                 </a>
               </div>
             </div>
@@ -104,7 +104,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} HomeDen. All Rights Reserved.
+              © {currentYear} ICLO. All Rights Reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

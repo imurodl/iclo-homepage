@@ -147,7 +147,7 @@ const PricingSection = () => {
                 </CardDescription>
                 <div className="mb-4">
                   <span className="text-4xl font-bold text-homeden-navy">
-                    ₩{(isAnnual ? plan.annualPrice / 12 : plan.monthlyPrice).toLocaleString()}
+                    ₩{(isAnnual ? Math.round(plan.annualPrice / 12 / 100) * 100 : plan.monthlyPrice).toLocaleString()}
                   </span>
                   <span className="text-gray-600 ml-2">/월</span>
                   {isAnnual && (

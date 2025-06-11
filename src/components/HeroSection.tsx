@@ -79,7 +79,7 @@ const HeroSection = () => {
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-homeden-navy px-8 py-4 text-lg font-semibold transition-all duration-300"
+              className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-homeden-navy px-8 py-4 text-lg font-semibold transition-all duration-300 shadow-lg"
             >
               서비스 알아보기
             </Button>

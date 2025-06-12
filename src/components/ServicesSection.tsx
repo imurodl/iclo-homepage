@@ -25,14 +25,12 @@ const ServicesSection = () => {
       title: "HomeDen",
       subtitle: "AI 셀프 구강체크 & 전문의 상담",
       description: "스마트폰으로 간편하게, 전문의와 안전하게",
-      icon: "🔬",
       image: "/lovable-uploads/homeden.png",
     },
     {
       title: "HomeDen Connect",
       subtitle: "스마트 구강검진 & 진료관리",
       description: "디지털 진료 프로세스로 효율적인 환자관리",
-      icon: "📋",
       image: "/lovable-uploads/doctor-consultation.png",
     },
   ];
@@ -65,9 +63,6 @@ const ServicesSection = () => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                <div className="absolute top-6 right-6 text-5xl bg-white/90 p-4 rounded-full shadow-lg">
-                  {service.icon}
-                </div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="text-3xl font-bold mb-2">{service.title}</h3>
                   <p className="text-homeden-red-light font-semibold text-lg mb-3">

@@ -42,12 +42,12 @@ const ServicesSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold text-homeden-navy mb-4">
-            혁신적인 치과 솔루션
+            혁신적인 AI 치과 솔루션
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            AI 기술로 언제 어디서나 구강 건강을 체크하고
+            환자는 홈덴에서 시작, 병원은 홈덴커넥트로 완성.
             <br />
-            전문의 상담부터 진료 관리까지 완벽한 솔루션을 제공합니다
+            환자와 병원 모두의 니즈를 충족하는 솔루션을 제공합니다.
           </p>
         </div>
 

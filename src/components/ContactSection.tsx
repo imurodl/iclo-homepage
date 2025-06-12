@@ -1,18 +1,17 @@
-
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from '@/hooks/use-toast';
+import React, { useState, useEffect } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    hospital: '',
-    phone: '',
-    email: '',
-    message: ''
+    name: "",
+    hospital: "",
+    phone: "",
+    email: "",
+    message: "",
   });
 
   useEffect(() => {
@@ -20,53 +19,55 @@ const ContactSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.animate-on-scroll');
+    const elements = document.querySelectorAll(".animate-on-scroll");
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simple validation
     if (!formData.name || !formData.phone || !formData.email) {
       toast({
-        title: '필수 정보를 입력해주세요',
-        description: '이름, 연락처, 이메일은 필수 입력 항목입니다.',
-        variant: 'destructive'
+        title: "필수 정보를 입력해주세요",
+        description: "이름, 연락처, 이메일은 필수 입력 항목입니다.",
+        variant: "destructive",
       });
       return;
     }
 
-    console.log('Form submitted:', formData);
-    
+    console.log("Form submitted:", formData);
+
     toast({
-      title: '문의가 성공적으로 전송되었습니다!',
-      description: '24시간 내에 담당자가 연락드리겠습니다.',
+      title: "문의가 성공적으로 전송되었습니다!",
+      description: "24시간 내에 담당자가 연락드리겠습니다.",
     });
 
     // Reset form
     setFormData({
-      name: '',
-      hospital: '',
-      phone: '',
-      email: '',
-      message: ''
+      name: "",
+      hospital: "",
+      phone: "",
+      email: "",
+      message: "",
     });
   };
 
@@ -78,7 +79,8 @@ const ContactSection = () => {
             문의 & 데모 신청
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            HomeDen 솔루션에 대해 더 자세히 알고 싶으시거나<br />
+            HomeDen 솔루션에 대해 더 자세히 알고 싶으시거나
+            <br />
             무료 데모를 체험해보고 싶으시다면 언제든 연락주세요
           </p>
         </div>
@@ -122,7 +124,7 @@ const ContactSection = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -168,7 +170,7 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <Button 
+                <Button
                   type="submit"
                   className="w-full bg-homeden-red hover:bg-homeden-red-light text-white py-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
                 >
@@ -179,7 +181,7 @@ const ContactSection = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="animate-on-scroll" style={{ animationDelay: '0.2s' }}>
+          <div className="animate-on-scroll" style={{ animationDelay: "0.2s" }}>
             <Card className="border-0 shadow-xl mb-8">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-homeden-navy mb-6">
@@ -200,7 +202,9 @@ const ContactSection = () => {
                       <span className="text-white text-xl">📞</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">대표번호</div>
+                      <div className="font-semibold text-gray-900">
+                        대표번호
+                      </div>
                       <div className="text-gray-600">070-4147-2804</div>
                     </div>
                   </div>
@@ -210,14 +214,18 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">주소</div>
-                      <div className="text-gray-600">제주특별자치도 제주시<br />중앙로 14길 21</div>
+                      <div className="text-gray-600">
+                        제주특별자치도 제주시
+                        <br />
+                        중앙로 14길 21
+                      </div>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-xl">
+            {/* <Card className="border-0 shadow-xl">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-homeden-navy mb-6">
                   운영시간
@@ -243,7 +251,7 @@ const ContactSection = () => {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </div>

@@ -66,7 +66,7 @@ const ContactSection = () => {
       console.log("Sending data:", submitData); // 디버깅용 로그
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzdh_t2N15GTA9-5Hl0Sb6j-dT6edd_cTQ5UPPKb7er4YE3XXMYq5HasSGDQZQSiGYW/exec",
+        "https://script.google.com/macros/s/AKfycbw9RT5IZ3FZHuQF8Vxi1lwrTPOrbch7GrlAxHtaL9JDScKVQ9_ykrJ0X0y_DiEBFiD4/exec",
         {
           method: "POST",
           mode: "no-cors",

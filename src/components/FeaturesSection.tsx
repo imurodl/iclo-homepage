@@ -59,39 +59,38 @@ const FeaturesSection = () => {
   const connectFeatures: Feature[] = [
     {
       title: "📋 대기 ZERO 전자문진",
-      description: "방문전 부터 환자-병원 연결이 즉시 시작됩니다.\n노쇼, 대기시간은 줄고 매출은 상승! ",
+      description:
+        "방문전 부터 환자-병원 연결이 즉시 시작됩니다.\n노쇼, 대기시간은 줄고 매출은 상승! ",
       image: "/lovable-uploads/homeden_connect_1.png",
     },
     {
       title: "🔬 AI 1차 스크리닝",
-      description: "분석은 AI가, 설득은 원장님이!\n신뢰도 2배 ",
-      arrowUp: true,
-      description2: " → 고가 치료 전환이 한층 쉬워집니다.",
+      description:
+        "분석은 AI가, 설득은 원장님이!\n신뢰도는 2배 UP, 고가 치료전환이 한층 쉬워집니다.",
       image: "/lovable-uploads/homeden_connect_2.png",
     },
     {
       title: "💻 디지털화 된 진단, 상담",
-      description: "진단 및 상담 과정을 시각화 하여 전달과정 오류 없이 \n 환자 동의률",
-      arrowUp: true,
-      description2: ", 스텝 업무는 줄어듭니다.",
+      description:
+        "진단 및 상담과정을 시각화하여 오류 없는 전달과정.\n직원 업무는 줄이고, 환자 동의율은 높이세요!",
       image: "/lovable-uploads/homeden_connect_3.png",
     },
     {
       title: "💬 진료중 환자와의 소통 강화",
-      description: "각종 서류 온라인 발급, 상담내용기반 수납 및 일정 자동 안내 \n 환자 만족도UP, 데스크 업무 감소",
+      description:
+        "각종 서류 온라인 발송, 상담내용 기반 수납/일정 자동 안내.\n환자 만족도는 올라가고 데스크 업무는 줄어듭니다.",
       image: "/lovable-uploads/homeden_connect_4.png",
     },
     {
       title: "📊 AI 기반 개인 맞춤형 CRM",
-      description: "환자별 맞춤형 문자전송으로 충성환자를 만드세요.\n고객 충성도·상담 동의율",
-      arrowUp: true,
+      description:
+        "고객 충성도 올리는 스마트한 CRM.\nAI가 생성하는 환자별 맞춤 문자로 충성고객을 만들어보세요.",
       image: "/lovable-uploads/homeden_connect_5.png",
     },
     {
       title: "🔄 AI 구환 부활 프로젝트",
-      description: "잊힌 환자도 AI가 다시 호출! 구환 유치율 ",
-      arrowUp: true,
-      description2: ", 마케팅 비용 0원\n어려운 구환 관리가 쉬워지고, 구환유치율이 향상됩니다.",
+      description:
+        "구환 이벤트 추천 및 생성, 잊힌 환자도 AI가 다시 호출!\n마케팅 비용 0원으로 구환 유치율 ⬆️ ",
       image: "/lovable-uploads/homeden_connect_6.png",
     },
   ];
@@ -135,7 +134,10 @@ const FeaturesSection = () => {
                   <h4 className="font-bold text-homeden-navy mb-2">
                     {feature.title}
                   </h4>
-                  <p className="text-sm text-gray-600 leading-relaxed" style={{ whiteSpace: "pre-line" }}>
+                  <p
+                    className="text-sm text-gray-600 leading-relaxed"
+                    style={{ whiteSpace: "pre-line" }}
+                  >
                     {feature.description}
                   </p>
                 </CardContent>
@@ -151,8 +153,9 @@ const FeaturesSection = () => {
               HomeDen Connect 기능
             </h3>
             <p className="text-lg text-gray-600">
-            환자 유치와 매출 성장을 동시에 실현하는 올‑인‑원 플랫폼
-              <br />인력은 줄이고 소통은 강화되는 디지털 진료 환경을 만들어보세요
+              환자 유치와 매출 성장을 동시에 실현하는 올‑인‑원 플랫폼
+              <br />
+              인력은 줄이고 소통은 강화되는 디지털 진료 환경을 만들어보세요
             </p>
           </div>
 
@@ -174,10 +177,17 @@ const FeaturesSection = () => {
                   <h4 className="font-bold text-homeden-navy mb-2">
                     {feature.title}
                   </h4>
-                  <p className="text-sm text-gray-600 leading-relaxed" style={{ whiteSpace: "pre-line" }}>
+                  <p
+                    className="text-sm text-gray-600 leading-relaxed"
+                    style={{ whiteSpace: "pre-line" }}
+                  >
                     {feature.description}
-                    {feature.arrowUp && <FaArrowUp className="inline-block text-green-500 mx-1" />}
-                    {feature.arrowDown && <FaArrowDown className="inline-block text-red-500 mx-1" />}
+                    {feature.arrowUp && (
+                      <FaArrowUp className="inline-block text-green-500 mx-1" />
+                    )}
+                    {feature.arrowDown && (
+                      <FaArrowDown className="inline-block text-red-500 mx-1" />
+                    )}
                     {feature.description2}
                   </p>
                 </CardContent>

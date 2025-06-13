@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "김민준 원장",
-      position: "서울대치과의원 대표원장",
+      position: "서울치과의원 대표원장",
       content:
         "HomeDen의 AI 분석 기능 덕분에 환자들의 구강 상태를 더 정확하게 파악할 수 있게 되었습니다. 진료 효율성이 30% 이상 향상되었어요.",
       rating: 5,

@@ -189,8 +189,8 @@ const ContactSection = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-homeden-red rounded-full flex items-center justify-center">
-                      <span className="text-white text-xl">📧</span>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                      <span className="text-white text-3xl">📧</span>
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">이메일</div>
@@ -198,8 +198,8 @@ const ContactSection = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-homeden-red rounded-full flex items-center justify-center">
-                      <span className="text-white text-xl">📞</span>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                      <span className="text-white text-3xl">📞</span>
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">
@@ -209,8 +209,8 @@ const ContactSection = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-homeden-red rounded-full flex items-center justify-center">
-                      <span className="text-white text-xl">📍</span>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                      <span className="text-white text-3xl">📍</span>
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">주소</div>
@@ -233,11 +233,11 @@ const ContactSection = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-700">평일</span>
-                    <span className="font-semibold">09:00 - 18:00</span>
+                    <span className="font-semibold">10:00 - 18:00</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">토요일</span>
-                    <span className="font-semibold">09:00 - 13:00</span>
+                    <span className="font-semibold">10:00 - 13:00</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">일요일/공휴일</span>

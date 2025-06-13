@@ -41,7 +41,7 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Simple validation
@@ -54,21 +54,50 @@ const ContactSection = () => {
       return;
     }
 
-    console.log("Form submitted:", formData);
+    try {
+      const submitData = {
+        name: formData.name,
+        hospital: formData.hospital || "",
+        phone: formData.phone,
+        email: formData.email,
+        message: formData.message || "",
+      };
 
-    toast({
-      title: "문의가 성공적으로 전송되었습니다!",
-      description: "24시간 내에 담당자가 연락드리겠습니다.",
-    });
+      console.log("Sending data:", submitData); // 디버깅용 로그
 
-    // Reset form
-    setFormData({
-      name: "",
-      hospital: "",
-      phone: "",
-      email: "",
-      message: "",
-    });
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzdh_t2N15GTA9-5Hl0Sb6j-dT6edd_cTQ5UPPKb7er4YE3XXMYq5HasSGDQZQSiGYW/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(submitData),
+        }
+      );
+
+      toast({
+        title: "문의가 성공적으로 전송되었습니다!",
+        description: "24시간 내에 담당자가 연락드리겠습니다.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        hospital: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "상담 신청에 실패했습니다",
+        description: "잠시 후 다시 시도해주세요.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

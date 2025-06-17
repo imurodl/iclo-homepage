@@ -244,9 +244,17 @@ const ContactSection = () => {
                     <div>
                       <div className="font-semibold text-gray-900">주소</div>
                       <div className="text-gray-600">
-                        제주특별자치도 제주시
-                        <br />
-                        중앙로 14길 21
+                        <div className="mb-2">
+                          <strong>본사:</strong> 제주도 제주시 첨단로330 A동 C11호
+                        </div>
+                        <div className="mb-2">
+                          <strong>서울지사:</strong> 서울특별시 강서구 양천로 424<br />
+                          데시앙플렉스 지식산업센터 931-932호
+                        </div>
+                        <div>
+                          <strong>광주지사:</strong> 광주광역시 동구 금남로 193-22<br />
+                          광주AI창업캠프 1호 601호
+                        </div>
                       </div>
                     </div>
                   </div>

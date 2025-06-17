@@ -49,7 +49,11 @@ const Footer = () => {
             </p>
             <div className="space-y-2 text-gray-300">
               <div><strong>주식회사 아이클로</strong></div>
-              <div>제주특별자치도 제주시 중앙로 14길 21</div>
+              <div className="space-y-1">
+                <div><strong>본사:</strong> 제주도 제주시 첨단로330 A동 C11호</div>
+                <div><strong>서울지사:</strong> 서울특별시 강서구 양천로 424 데시앙플렉스 지식산업센터 931-932호</div>
+                <div><strong>광주지사:</strong> 광주광역시 동구 금남로 193-22 광주AI창업캠프 1호 601호</div>
+              </div>
               <div>사업자등록번호: 423-88-01350</div>
             </div>
           </div>

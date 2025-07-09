@@ -10,7 +10,7 @@ const About = () => {
       <section className="pt-20 lg:pt-24 section-padding bg-gradient-to-r from-homeden-navy to-homeden-navy/90">
         <div className="container-custom">
           <div className="text-center text-white">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 pt-6">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 pt-16">
               회사소개
             </h1>
             <p className="text-xl lg:text-2xl opacity-90">
@@ -25,7 +25,7 @@ const About = () => {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 items-start relative">
+            <div className="grid md:grid-cols-3 gap-8 items-stretch relative">
               <div className="md:col-span-1">
                 <h2 className="text-4xl font-bold text-homeden-navy mb-4">
                   CEO
@@ -85,7 +85,7 @@ const About = () => {
                 <img
                   src="/lovable-uploads/introduce/ceo.png"
                   alt="CEO 김준배"
-                  className="absolute bottom-0 right-0 w-56 h-auto hidden md:block"
+                  className="absolute bottom-0 right-0  h-auto hidden md:block object-contain -mb-24"
                 />
               </div>
             </div>
@@ -302,7 +302,7 @@ const About = () => {
 
       {/* Company Values */}
       <section className="section-padding bg-gray-50">
-        <div className="container-custom">
+        <div className="container-custom pb-20">
           <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-homeden-navy">
             아이클로는
             <br />

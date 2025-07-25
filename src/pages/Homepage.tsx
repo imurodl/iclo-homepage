@@ -486,14 +486,16 @@ const Homepage = () => {
               <Card className="flex flex-col w-full sm:w-[238px] h-[238px] items-start gap-2.5 p-[30px] bg-white rounded-[20px] overflow-hidden shrink-0 mx-auto lg:mx-0">
                 <CardContent className="p-0 flex-1 flex">
                   <div className="flex flex-col items-start justify-between relative flex-1 self-stretch w-full">
-                    <div className="font-bold text-gray-900 text-3xl">
+                    <div className="font-bold text-gray-900 text-3xl item-start">
                       진료시간
                     </div>
-                    <img
-                      src="/lovable-uploads/hospital/clock-icon.svg"
-                      alt="Clock Icon"
-                      className="w-12 h-12"
-                    />
+                    <div className="flex justify-end w-[178px]">
+                      <img
+                        src="/lovable-uploads/hospital/clock-icon.svg"
+                        alt="Clock Icon"
+                        className="w-23 h-22"
+                      />
+                    </div>
                   </div>
                 </CardContent>
               </Card>

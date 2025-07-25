@@ -1,0 +1,24 @@
+/* Homepage-specific styles */
+/* This ensures Pretendard font ONLY applies to Homepage component */
+
+.homepage-container,
+.homepage-container * {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif !important;
+}
+
+/* Ensure font weights work properly with variable font */
+.homepage-container {
+  font-variation-settings: 'wght' 400;
+}
+
+.homepage-container .font-medium {
+  font-variation-settings: 'wght' 500;
+}
+
+.homepage-container .font-semibold {
+  font-variation-settings: 'wght' 600;
+}
+
+.homepage-container .font-bold {
+  font-variation-settings: 'wght' 700;
+}

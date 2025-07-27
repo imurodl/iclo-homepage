@@ -59,8 +59,8 @@ export interface IntroductionImage {
 export interface StaffMember {
   created: string;
   education: string;
-  hospital_id: string;
-  id: string;
+  hospital_id: number;
+  id: number;
   introduction: string;
   name: string;
   position: string;

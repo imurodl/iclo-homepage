@@ -6,16 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  MapPin,
-  Heart,
-  Calendar,
-  Star,
-  Users,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { MapPin, Heart, Calendar, Star, Users, ArrowRight } from "lucide-react";
 import { HospitalResponse, StaffMember } from "@/types/hospital";
 import useEmblaCarousel from "embla-carousel-react";
 import {
@@ -26,7 +17,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import "../styles/homepage.css";
-import data from "../lib/mockupData.json";
 
 const Homepage = () => {
   const { urlSlug } = useParams<{ urlSlug: string }>();
@@ -43,11 +33,11 @@ const Homepage = () => {
     dragFree: false,
   });
 
-  // const { data, isLoading, error } = useQuery<HospitalResponse>({
-  //   queryKey: ["homepage", urlSlug],
-  //   queryFn: () => getHospital(urlSlug),
-  //   enabled: !!urlSlug,
-  // });
+  const { data, isLoading, error } = useQuery<HospitalResponse>({
+    queryKey: ["homepage", urlSlug],
+    queryFn: () => getHospital(urlSlug),
+    enabled: !!urlSlug,
+  });
 
   // Handle smooth scrolling with offset
   const handleNavClick = (
@@ -102,26 +92,26 @@ const Homepage = () => {
     return () => clearInterval(interval);
   }, [emblaApi]);
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="min-h-screen flex items-center justify-center">
-  //       <div className="text-center">
-  //         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-  //         <p className="mt-4 text-gray-600">Loading...</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
-  // if (error instanceof Error) {
-  //   return (
-  //     <div className="min-h-screen flex items-center justify-center">
-  //       <div className="text-center">
-  //         <p className="text-red-600">Error: {error.message}</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (error instanceof Error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600">Error: {error.message}</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!data?.data) {
     return (
@@ -536,7 +526,7 @@ const Homepage = () => {
                             {getDayName(hour.day_of_week)}요일
                           </td>
                           <td className="text-left">
-                            {hour.is_closed === true ? (
+                            {hour.is_closed === "true" ? (
                               <span className="text-red-500 font-medium">
                                 휴무
                               </span>

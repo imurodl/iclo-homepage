@@ -5,10 +5,28 @@ import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { MapPin, Heart, Calendar, Star, Users, ArrowRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  MapPin,
+  Heart,
+  Calendar,
+  Star,
+  Users,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { HospitalResponse, StaffMember } from "@/types/hospital";
 import useEmblaCarousel from "embla-carousel-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import "../styles/homepage.css";
+import data from "../lib/mockupData.json";
 
 const Homepage = () => {
   const { urlSlug } = useParams<{ urlSlug: string }>();
@@ -25,11 +43,11 @@ const Homepage = () => {
     dragFree: false,
   });
 
-  const { data, isLoading, error } = useQuery<HospitalResponse>({
-    queryKey: ["homepage", urlSlug],
-    queryFn: () => getHospital(urlSlug),
-    enabled: !!urlSlug,
-  });
+  // const { data, isLoading, error } = useQuery<HospitalResponse>({
+  //   queryKey: ["homepage", urlSlug],
+  //   queryFn: () => getHospital(urlSlug),
+  //   enabled: !!urlSlug,
+  // });
 
   // Handle smooth scrolling with offset
   const handleNavClick = (
@@ -84,26 +102,26 @@ const Homepage = () => {
     return () => clearInterval(interval);
   }, [emblaApi]);
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="min-h-screen flex items-center justify-center">
+  //       <div className="text-center">
+  //         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+  //         <p className="mt-4 text-gray-600">Loading...</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
-  if (error instanceof Error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-red-600">Error: {error.message}</p>
-        </div>
-      </div>
-    );
-  }
+  // if (error instanceof Error) {
+  //   return (
+  //     <div className="min-h-screen flex items-center justify-center">
+  //       <div className="text-center">
+  //         <p className="text-red-600">Error: {error.message}</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   if (!data?.data) {
     return (
@@ -305,7 +323,10 @@ const Homepage = () => {
             건강하게 예빠지는 교정을 보여주는 교정치과,
             웃는바른이교정치과입니다.
           </p>
-          <button className="inline-flex px-[30px] py-5 justify-center items-center gap-2.5 rounded-[100px] bg-white hover:bg-gray-100 transition-colors">
+          <button
+            className="inline-flex px-[30px] py-5 justify-center items-center gap-2.5 rounded-[100px] bg-white hover:bg-gray-100 transition-colors"
+            onClick={() => window.open(`${hospitalData.naverLinkUrl}`)}
+          >
             <span className="text-[#191f28] text-[21px] font-semibold leading-[30.45px]">
               예약하기
             </span>
@@ -423,16 +444,19 @@ const Homepage = () => {
       {/* Staff Section with Auto-scrolling Carousel */}
       {hospitalData.staff && hospitalData.staff.length > 0 && (
         <section id="services" className="py-[140px] bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900">
-              의료진 소개
-            </h2>
-            <div className="max-w-6xl mx-auto overflow-hidden" ref={emblaRef}>
-              <div className="flex">
+          <div className="container mx-auto px-10">
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 2000,
+                }),
+              ]}
+            >
+              <CarouselContent className="flex flex-row justify-center">
                 {hospitalData.staff.map((member) => (
-                  <div
+                  <CarouselItem
                     key={member.id}
-                    className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 px-2 md:px-4"
+                    className="md:basis-1/2 lg:basis-1/3 px-4 md:px-5"
                   >
                     <Card className="overflow-hidden border-0 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                       <div className="h-[300px] md:h-[394px] relative overflow-hidden">
@@ -470,10 +494,12 @@ const Homepage = () => {
                         </Button>
                       </div>
                     </Card>
-                  </div>
+                  </CarouselItem>
                 ))}
-              </div>
-            </div>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </section>
       )}
@@ -510,7 +536,7 @@ const Homepage = () => {
                             {getDayName(hour.day_of_week)}요일
                           </td>
                           <td className="text-left">
-                            {hour.is_closed === "true" ? (
+                            {hour.is_closed === true ? (
                               <span className="text-red-500 font-medium">
                                 휴무
                               </span>
@@ -545,7 +571,7 @@ const Homepage = () => {
             </div>
 
             <Card
-              className="w-full lg:w-auto h-auto md:h-[492px] flex items-center gap-2.5 px-8 md:px-[58px] py-12 md:py-[65px] rounded-[20px] overflow-hidden"
+              className="w-full lg:w-auto h-auto md:h-[492px] flex items-center justify-center gap-2.5 px-8 md:px-[58px] py-12 md:py-[65px] rounded-[20px] overflow-hidden"
               style={{
                 background: "linear-gradient(154deg, #000 0%, #666 99.96%)",
               }}
@@ -583,7 +609,12 @@ const Homepage = () => {
                   </div>
 
                   <div className="flex items-center justify-center gap-2.5">
-                    <div className="inline-flex items-center justify-center gap-2.5 px-4 py-3.5 bg-[#fee502] rounded-full hover:bg-[#fee502]/90 cursor-pointer transition-colors">
+                    <div
+                      className="inline-flex items-center justify-center gap-2.5 px-4 py-3.5 bg-[#fee502] rounded-full hover:bg-[#fee502]/90 cursor-pointer transition-colors"
+                      onClick={() =>
+                        window.open(`${hospitalData.kakaoLinkUrl}`)
+                      }
+                    >
                       <img
                         src="/lovable-uploads/hospital/kakao-logo.png"
                         alt="Kakao"
@@ -594,7 +625,12 @@ const Homepage = () => {
                       </div>
                     </div>
 
-                    <div className="inline-flex items-center justify-center gap-2.5 px-4 py-3.5 bg-black rounded-full hover:bg-gray-800 cursor-pointer transition-colors">
+                    <div
+                      className="inline-flex items-center justify-center gap-2.5 px-4 py-3.5 bg-black rounded-full hover:bg-gray-800 cursor-pointer transition-colors"
+                      onClick={() =>
+                        window.open(`${hospitalData.instaLinkUrl}`)
+                      }
+                    >
                       <img
                         src="/lovable-uploads/hospital/instagram-logo.png"
                         alt="Instagram"
@@ -634,7 +670,7 @@ const Homepage = () => {
                   className="flex w-[200px] flex-col justify-between items-start self-stretch rounded-[20px] border border-[#505966] cursor-pointer transition-shadow"
                   onClick={() => window.open(`${hospitalData.naverLinkUrl}`)}
                 >
-                  <CardContent className="flex flex-col items-start justify-between p-[30px] h-full w-full">
+                  <CardContent className="flex flex-col items-start justify-between p-[30px] h-full min-w-[200px]">
                     <ArrowRight />
                     <div className="text-[#505966] text-2xl font-medium leading-[33.6px]">
                       지도보기
